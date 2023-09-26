@@ -324,7 +324,7 @@ const personalMovieDB = {
 
 function rememberMyFilms() {
     for (let i = 0; i < 2; i++) {
-        const film = prompt('Один из последних просмотренных фильмов?', ''),
+        const film = prompt('Один из последних просмотренных фильмов?', '').trim(),
               score = prompt('На сколько оцените его?', '');
 
         const isFilmValid = (film != null && film != '' && film.length < 50);
@@ -369,11 +369,17 @@ function showMyDB(hidden) {
 showMyDB(personalMovieDB.privat);
 
 
+// function writeYourGenres() {
+//     for (let i = 1; i <= 3; i++) {
+//         const genre = prompt(`Ваш любимый жанр под номером ${i}`);
+//         personalMovieDB.genres[i - 1] = genre;
+
+//     }
+// }
+
 function writeYourGenres() {
     for (let i = 1; i <= 3; i++) {
-        const genre = prompt(`Ваш любимый жанр под номером ${i}`);
-        personalMovieDB.genres[i - 1] = genre;
-
+        personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
     }
 }
 
