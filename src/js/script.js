@@ -386,6 +386,156 @@ function writeYourGenres() {
 writeYourGenres();
 
 
+function first() {
+    // Do something
+    setTimeout(function() {
+        console.log(1);
+    }, 500);
+}
+
+function second() {
+    console.log(2);
+}
+
+first();
+second();
+
+function learnJS(lang, callback) {
+    console.log(`Я учу: ${lang}`);
+    callback();
+
+}
+
+function done() {
+    console.log('Я прошёл этот урок!');
+}
+
+function done2() {
+    console.log('Я прошёл этот урок22222!');
+}
+
+learnJS('JavaScript', done);
+learnJS('JavaScript', done2);
+
+
+// Объектыб деструктуризация объектов(ES6)
+
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        background: 'red'
+    }
+   
+};
+
+for (let key in options) {
+    if (typeof(options[key]) === 'object') {
+        for (let i in options[key]) {
+            // options = {}
+            // key = 'colors'
+            // options[key] = {}
+            // options['colors'] = {}
+            // i = 'border'
+            // options['colors']['border']
+            // options[key][i]
+            console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+        }
+    } else {
+    console.log(`Свойство ${key} имеет значение ${options[key]}`);
+    }
+}
+
+console.log(options.colors);
 
 
 
+
+const user = {
+    'name': 'bob',
+    'surname': 'Wilson',
+
+};
+
+
+const name = 'na' + 'me';
+// taks 1
+console.log(user.name);
+console.log(user['na' + 'me']);
+
+// 0 1 2
+
+
+
+
+
+
+
+function searchInObj(object, value) {
+    for (let key in object) {
+       if (typeof(object[key]) === 'object') {
+        console.log(128)
+          searchInObj(object[key], value); 
+       } else if(object[key] === value) {
+            console.log(key);
+       }
+    }
+    
+ }
+ 
+ searchInObj({
+    a: 1, 
+    b: 2, 
+    c: {x: 1, y: 3}
+}, 1);  // 'a'
+
+
+
+searchInObj({
+    a: 1, 
+    b: 2, 
+    c: {x: 1, y: 3}
+}, 2);  // 'b'
+
+
+searchInObj({
+    a: 1, 
+    b: 2, 
+    c: {x: 1, y: 3}
+}, 3);  // 'y'
+
+
+
+
+// Массивы и псевдомассивы
+
+
+const arr = [ 2, 3, 6, 8, 10 ];
+// arr[99] = 0;
+// console.log(arr.length);
+// console.log(arr);
+
+
+arr.forEach(function(item, i, arr) {
+    console.log(`${i}: ${item} внутри массива  ${arr}`);
+});
+// arr.pop(); // - удаляет последний элемент массива
+// arr.push(10);
+
+// console.log(arr);
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+
+
+for (let value of arr) {
+    console.log(value)
+}
+
+const str = prompt("", "");
+const products = str.split(", ");
+console.log(products);
